@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CINEPREMIER | Theater Finder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .theater-card:hover {
+            border-color: #E50914;
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.15);
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffb4aa;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<nav class="flex justify-between items-center px-margin-desktop py-4 max-w-[1920px] mx-auto">
+<div class="font-display-lg text-display-lg font-black tracking-tighter text-primary-container">CINEPREMIER</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Movies</a>
+<a class="font-headline-sm text-headline-sm text-primary border-b-2 border-primary pb-1" href="#">Theaters</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Offers</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">VIP</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="flex items-center space-x-2 text-secondary-fixed-dim cursor-pointer hover:bg-white/5 p-2 rounded-xl transition-all">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-md text-label-md">New York, NY</span>
+</div>
+<button class="active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl">account_circle</span>
+</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 h-screen flex flex-col overflow-hidden">
+<!-- Search and Filter Header -->
+<section class="px-margin-desktop py-6 flex flex-col md:flex-row items-center gap-6 z-10 bg-background">
+<div class="relative flex-1 w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-white/10 rounded-full py-4 pl-12 pr-6 text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container transition-all" placeholder="Search by City or ZIP Code" type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-6 py-4 glass-panel rounded-full hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">filter_list</span>
+<span class="font-label-md text-label-md">Filters</span>
+</button>
+<button class="px-8 py-4 bg-primary-container text-on-primary-container font-headline-sm text-headline-sm rounded-full shadow-lg hover:shadow-primary-container/20 transition-all active:scale-95">
+                    Find Theaters
+                </button>
+</div>
+</section>
+<!-- Main Workspace: Split View -->
+<div class="flex-1 flex overflow-hidden">
+<!-- List Side (Scrollable) -->
+<div class="w-full md:w-[450px] lg:w-[550px] overflow-y-auto px-margin-desktop md:px-6 py-4 space-y-6">
+<div class="flex justify-between items-end mb-2">
+<h2 class="font-headline-md text-headline-md">Theaters Near You</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant">8 Results Found</span>
+</div>
+<!-- Theater Card 1 -->
+<div class="glass-panel p-6 rounded-xl theater-card cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-fixed">CINEPREMIER Grand Central</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">42nd St, New York • 0.8 miles</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-secondary-fixed">IMAX</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-secondary-fixed">VIP</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A moody, high-contrast vertical movie poster for a sci-fi blockbuster featuring a futuristic cityscape under a neon red sky. The style is cinematic and dark, with deep shadows and glowing highlights that align with the CinePremier luxury brand aesthetic. The lighting is dramatic and focused, emphasizing depth and mystery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLk1ntjMs4GAXdiKDXHWRtMddq0lj7Iot-ymEoNVVRGDzSpYYDP1rExGMlTIujr_FwJUQYSaB-4d8PugQrv4sn1l0DMjPa71ef0ec7btEGr-H1HMvuJqsIZQ2iA2F_vhgV8NtYkL8P7CnUVklDJsQwUpoexzus3VYKz1dOBjBCOrCGrcnnZ54jJrHviWBkDTuwm5lq2nOriAdo07FujcPsxyTy6GiGiR4hu5w1iEs7pPrCPonr1CXnpUIytaQCuwARbygum2FufUQ"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md mb-2">Project: Genesis</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">14:20</button>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">17:45</button>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">20:30</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Theater Card 2 -->
+<div class="glass-panel p-6 rounded-xl theater-card cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-fixed">CINEPREMIER Lincoln Square</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">Broadway &amp; 68th, NY • 2.4 miles</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-secondary-fixed">DOLBY</span>
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-secondary-fixed">4DX</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A vertical cinematic movie poster for an epic fantasy drama. The scene features a lone figure standing on a cliff overlooking a mystical valley bathed in golden hour light. The atmosphere is prestigious and atmospheric, with rich textures and a sophisticated color palette of deep navy and embers. The composition is elegant and framed perfectly for a premium theater UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDltLr9X3mFaCTTIhpoGTAttYd5IaGq1UR1bjxRV-uvlWEI-UbsqUW7up-9DFDwyDGLf9gW6zNymOA_VG0M-OIBnZ7jFjiPDq3AnLWCjW-r6oqJPtjOgDxsWC2vZjISZX1MglAkqY-jTeJa1-zgsQ9RgkqjQejmXNHLcZEcUUqEJry61OUU1_1myxJ1SD1pSDaSeCmJh66S6E0Q7Homxi5WYgX0_oIWZynbAIzX5efax0d4KCgJx4WIaNQxviyPxhHsLWaj9pL2MJc"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md mb-2">The Silent King</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">15:00</button>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">18:15</button>
+<button class="px-3 py-1 bg-primary-container text-on-primary-container rounded font-label-sm text-label-sm">21:00</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Theater Card 3 -->
+<div class="glass-panel p-6 rounded-xl theater-card cursor-pointer transition-all duration-300">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary-fixed">CINEPREMIER Chelsea</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">23rd St, New York • 3.1 miles</p>
+</div>
+<div class="flex gap-2">
+<span class="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold text-secondary-fixed">VIP</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 bg-surface-container rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A vertical teaser poster for a modern noir thriller. High-contrast black and white photography with a single sharp accent of cinema red. A mysterious shadowed figure in a rain-slicked city street. The aesthetic is extremely premium, mysterious, and focused, echoing the high-end dark glassmorphism of the CINEPREMIER brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7q46NjSfFqFawV1Ds--7Yz7M9tSbpkabwIYfVoHVcrkAqNvGhOOnnQXBxB_WLIkBT7Aq411_yO6GOsJDpD_VOV0J6QknnL9EX52LAXilxjS0VZBjXPv6xqeoUi5vu1R_qMYGxTGj9Fp-VobHc44xoUu0Iz12hkZbYiVTuIBICvPL5sJBsCwEBvCiBY1I7PwCCCiydbDEOwYFcdirb26hKq9uZdwf0gOuvivmbftK6GMPMMRa3jB7ILr-02Mfo8Umzz8vfwY9Xg8g"/>
+</div>
+<div class="flex-1">
+<p class="font-label-md text-label-md mb-2">After Dark</p>
+<div class="flex flex-wrap gap-2">
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">16:30</button>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">19:45</button>
+<button class="px-3 py-1 bg-surface-container-highest hover:bg-primary-container transition-colors rounded font-label-sm text-label-sm">22:15</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Map Side -->
+<div class="hidden md:block flex-1 relative bg-surface-container-low m-4 rounded-3xl overflow-hidden border border-white/5">
+<!-- Mock Map Background -->
+<div class="absolute inset-0 grayscale opacity-40 mix-blend-luminosity" data-alt="A stylized, minimalist architectural map of Manhattan, New York. The map features elegant, thin lines in a monochromatic dark palette, emphasizing the grid structure and urban layout. Subtle glowing markers indicate theater locations, shimmering with a soft cinema red pulse against the deep charcoal background. The mood is sophisticated and high-tech." data-location="New York City Manhattan Map" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBIV8PZZPGe94Ylhc3PPiLgriZ69GEVZcesnk8QYlmvhH12Pk7x23hTqePGsOLSMLK7J-V19cvK46n6jrPIf6ZAoXwITBSfFUmykcB0Gh9YVeZ8o8qPi_zc31htTst1ra21ztv5As-efQkJ19VZzu6dL1e4FTPTDUs9yCKSj91rIM2yf3iI9JQul46y5U31CAHloQGQFJKcHleCW1VMDoI5FPUrpg-O_RjEMU22vi4CCPXyqKWlcYu5N3OBDobGy-KJmgaM_Qe1RhU')"></div>
+<!-- Interactive Overlay Elements -->
+<div class="absolute inset-0 p-8 pointer-events-none">
+<div class="absolute top-10 left-10 w-4 h-4 bg-primary rounded-full ring-8 ring-primary/20 animate-pulse pointer-events-auto cursor-pointer group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-surface-container px-4 py-2 rounded-lg shadow-xl border border-white/10 whitespace-nowrap">
+<p class="font-label-md text-label-md text-primary">Grand Central</p>
+</div>
+</div>
+<div class="absolute top-40 right-40 w-4 h-4 bg-primary rounded-full ring-8 ring-primary/20 pointer-events-auto cursor-pointer group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-surface-container px-4 py-2 rounded-lg shadow-xl border border-white/10 whitespace-nowrap">
+<p class="font-label-md text-label-md text-primary">Lincoln Square</p>
+</div>
+</div>
+<div class="absolute bottom-60 left-1/3 w-4 h-4 bg-primary rounded-full ring-8 ring-primary/20 pointer-events-auto cursor-pointer group">
+<div class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block bg-surface-container px-4 py-2 rounded-lg shadow-xl border border-white/10 whitespace-nowrap">
+<p class="font-label-md text-label-md text-primary">Chelsea</p>
+</div>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-8 right-8 flex flex-col gap-2">
+<button class="w-12 h-12 glass-panel rounded-xl flex items-center justify-center hover:bg-white/10 pointer-events-auto transition-all">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="w-12 h-12 glass-panel rounded-xl flex items-center justify-center hover:bg-white/10 pointer-events-auto transition-all">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<button class="w-12 h-12 glass-panel rounded-xl flex items-center justify-center hover:bg-white/10 pointer-events-auto transition-all">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-white/5 py-12 px-margin-desktop">
+<div class="max-w-[1920px] mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="font-headline-md text-headline-md text-primary-container">CINEPREMIER</div>
+<div class="flex gap-8">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Bookings</a>
+</div>
+<div class="font-label-md text-label-md text-on-surface-variant">© 2024 CINEPREMIER LUXURY CINEMAS. ALL RIGHTS RESERVED.</div>
+</div>
+</footer>
+<script>
+        // Simple micro-interactions for cards
+        document.querySelectorAll('.theater-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Search focus interaction
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.style.boxShadow = '0 0 20px rgba(229, 9, 20, 0.1)';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.style.boxShadow = 'none';
+        });
+    </script>
+</body></html>

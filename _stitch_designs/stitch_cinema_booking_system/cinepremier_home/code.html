@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CINEPREMIER | Luxury Cinema Experience</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353534",
+                    "tertiary-fixed": "#e2e0fc",
+                    "tertiary-fixed-dim": "#c6c4df",
+                    "outline-variant": "#5e3f3b",
+                    "tertiary-container": "#717088",
+                    "background": "#131313",
+                    "on-primary-fixed": "#410001",
+                    "on-primary-container": "#fff7f6",
+                    "error": "#ffb4ab",
+                    "secondary": "#fff9ef",
+                    "primary": "#ffb4aa",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#ffb4aa",
+                    "tertiary": "#c6c4df",
+                    "surface-bright": "#393939",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary": "#2f2e43",
+                    "primary-fixed": "#ffdad5",
+                    "on-tertiary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#221b00",
+                    "inverse-primary": "#c0000c",
+                    "surface-container": "#201f1f",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-primary": "#690003",
+                    "primary-container": "#e50914",
+                    "surface-container-high": "#2a2a2a",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-secondary": "#3a3000",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930007",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#ffdb3c",
+                    "outline": "#af8782",
+                    "on-tertiary-container": "#fbf7ff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "on-surface-variant": "#e9bcb6",
+                    "surface": "#131313",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-fixed": "#1a1a2e",
+                    "on-secondary-container": "#725f00",
+                    "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "xl": "64px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "margin-desktop": "80px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "base": "4px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            scroll-behavior: smooth;
+        }
+        .glass {
+            background: rgba(25, 25, 46, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .hero-gradient {
+            background: linear-gradient(0deg, #131313 0%, rgba(19, 19, 19, 0) 100%);
+        }
+        .card-glow:hover {
+            box-shadow: 0 0 20px rgba(229, 9, 20, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353534;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e50914;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<nav class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-10">
+<a class="font-display-lg text-display-lg-mobile md:text-display-lg font-black tracking-tighter text-primary-container" href="#">CINEPREMIER</a>
+<div class="hidden md:flex gap-8">
+<a class="font-headline-sm text-headline-sm text-primary border-b-2 border-primary pb-1" href="#">Movies</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Theaters</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Offers</a>
+<a class="font-headline-sm text-headline-sm text-on-surface-variant hover:text-primary transition-colors" href="#">VIP</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 glass px-4 py-2 rounded-full text-secondary-fixed hover:bg-white/5 transition-all active:scale-95">
+<span class="material-symbols-outlined text-secondary-fixed">location_on</span>
+<span class="font-label-md text-label-md hidden sm:inline">Los Angeles</span>
+</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-white/5 active:scale-95" data-icon="account_circle">account_circle</button>
+</div>
+</nav>
+</header>
+<!-- Main Content -->
+<main class="pt-0">
+<!-- Hero Carousel Section -->
+<section class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="relative w-full h-full">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<img class="w-full h-full object-cover" data-alt="A cinematic, ultra-high-definition wide shot of a dark fantasy movie scene featuring a mysterious warrior standing on a cliff edge at twilight. The background shows a sprawling, bioluminescent forest under a massive moon. The lighting is dramatic, with deep shadows and vibrant red and gold light leaks reflecting the premium CinePremier aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ-57G-fMev4vZHazWPCKJDsip8j5sSBjpMocoLatOhDGeP3IKMUEr4C7t7DB66VnDFaBdyg6Gf8oI8K0sC-42M4X1SitDxFwSngiF91ztz5pf3TrhgL5QaWj5ReaQIKZU0SdZUhSz_s5qo2fX9zGQqBWDuty9uIOS6I1wQpL7ztTZVo0wk7RznFx7cvUXuo4rc1adPaZMMnLNEHFkAzz1q7qPd8xo1MgzMmDzWdEMI51216f8xRLcoBbXWv8QX4Vtj7cR3mxyOLY"/>
+</div>
+</div>
+<div class="relative z-20 h-full flex flex-col justify-end px-margin-mobile md:px-margin-desktop pb-xl max-w-[1920px] mx-auto">
+<div class="max-w-2xl animate-fade-in">
+<span class="inline-block px-3 py-1 bg-primary-container text-on-primary-container font-label-md text-label-sm rounded mb-4 tracking-widest uppercase">Now Playing</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-4">ETERNAL SHADOWS</h1>
+<div class="flex items-center gap-4 mb-8 text-on-surface-variant font-body-md text-body-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span> 9.2</span>
+<span>•</span>
+<span>Sci-Fi / Adventure</span>
+<span>•</span>
+<span>2h 45m</span>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-headline-md text-headline-sm hover:brightness-110 transition-all active:scale-95 flex items-center gap-2 shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+<span class="material-symbols-outlined">confirmation_number</span> Book Tickets
+                        </button>
+<button class="glass text-on-surface px-8 py-4 rounded-lg font-headline-md text-headline-sm hover:bg-white/10 transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined">play_circle</span> Watch Trailer
+                        </button>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+<div class="w-[2px] h-12 bg-white/10 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-full bg-primary animate-[bounce_2s_infinite]"></div>
+</div>
+</div>
+</section>
+<!-- Category & Filter Bar -->
+<section class="px-margin-mobile md:px-margin-desktop py-lg max-w-[1920px] mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+<div class="flex gap-2 p-1 bg-surface-container-low rounded-xl border border-white/5">
+<button class="px-6 py-2 rounded-lg bg-primary-container text-on-primary-container font-label-md text-label-md shadow-lg">Now Playing</button>
+<button class="px-6 py-2 rounded-lg text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Coming Soon</button>
+</div>
+<div class="flex items-center gap-4 w-full md:w-auto">
+<div class="relative flex-1 md:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-high border-white/5 rounded-lg pl-10 pr-4 py-2 focus:ring-primary-container focus:border-primary-container text-body-md font-body-md outline-none transition-all" placeholder="Search movies, genres..." type="text"/>
+</div>
+<button class="p-2 glass rounded-lg text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">tune</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Movie Grid (Bento-inspired asymmetrical highlights) -->
+<section class="px-margin-mobile md:px-margin-desktop pb-xl max-w-[1920px] mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-gutter">
+<!-- Movie Card 1 (Large Highlight) -->
+<div class="col-span-2 row-span-1 md:row-span-2 group relative overflow-hidden rounded-xl aspect-[16/20] md:aspect-auto">
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent z-10"></div>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A striking vertical movie poster for a luxury noir thriller called 'Velvet Night'. The poster features a close-up of a person in a sophisticated black tuxedo against a backdrop of glowing city lights at night. The color palette is dominated by deep blues, rich blacks, and vibrant gold highlights. The lighting is dramatic and moody, reflecting a high-end cinematic experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmQPALo99WXpTpZFPiGXlf60gFO2FEdtflwU2Cuo-TSfKbuVDxaySVocZVM6rJHoQppqYaO5SRSFTjMibuEMVBLny8aEJXhhPhOiMlSVGUuC4oFoWPqxl6nPIPK82KiHm2T41Za2TTKQq6xIGGzLYnb70y-9qby14zaYfdbKrt3hsQpHZSfJhkw5zCIOXhPEdPwRFWZVNWP3ycKtfUZqcccL4oe-4TheeZPsU9vSgezitQdfl9gy9vtwxYyS_2PFMjUZ2ia9jGnMo"/>
+<div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+<div class="flex justify-between items-end">
+<div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">VELVET NIGHT</h3>
+<p class="text-on-surface-variant font-label-md text-label-sm">Noir • Thriller • 18+</p>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed px-2 py-1 rounded font-bold text-label-md">9.5</div>
+</div>
+<button class="w-full mt-4 bg-white/10 backdrop-blur-md border border-white/20 text-white py-3 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">Quick Book</button>
+</div>
+</div>
+<!-- Regular Movie Cards -->
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for an animated adventure film titled 'Neon Dreamers'. The style is vibrant cyberpunk with glowing pink, purple, and cyan colors. The scene shows a group of diverse characters exploring a futuristic city with flying vehicles and holographic billboards. The art style is crisp 3D animation with high-contrast cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP1kOrscSDptfSbuVvvZ16deo40jHDC22rwaKEkAwcDF97IbzE1uHLkE0xc7r5JTt1G-zqwejkzeWLE8g270K4IZKjgh894X5ZDURnhQZ1GCEW5Hy_yI61AkwC9u104wUgqvCmJOnrK7C2S5NgQZnTJ6o57HBbFiHf_Gv-wAVXvDJpkHFYrb4QfjAi4Im3sld8vBnFsBe_EJsSK_aWdZc6UVkLDe_jzE2BPUwb_PgafRYLkqQOg86WfXDPlAm0SChmmmOOsyeQP3Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Neon Dreamers</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Animation • Sci-Fi</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for a period drama named 'The Last Throne'. The image depicts a grand ballroom with ornate gold decorations and a lone figure in a royal red gown standing in the center. The lighting is warm and candle-lit, creating a sense of history and prestige. High-key luxury aesthetic with deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCKrL548UALVsgD5EX-Fk1WmaeikjiGxaxbtaaKaESQwBp95w5Z5RWEnSxmn1f_vd-loKrHE8qhQd6L8GHmNWFc0WoywV-gTQ7j9EEcr9c92Mr1ttm7NbrhkaeHPhVSaw74B1JPSoo8pG2vDWWtGp0iJ_DCMveHkmR4opd7dZ7_oF4OytlN7NHp4iEr8fTK2xxfIZ4PQdzgD-P3XIEZIP2-h3ftD3zHwPhXZYSp8kgwQjKR2sAO-AnK1F87MRJJ7jywfaGniPrp6I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">The Last Throne</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Drama • History</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for a high-octane action film titled 'Nitro Rush'. Features a sleek red sports car racing through a rain-slicked highway at night with orange sparks flying. The style is gritty yet polished, with heavy lens flares and motion blur. Intense cinematic atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-ZwfRxaX7tC4ZVCagyZX2g5QWpaHCNz4StPJjacCmzl2FaOcFRmpPFXuRN5JnP_WfJYVjNmLbxwv-9PRcajls_eQeR9u77s19QTjeqkJEhCMSFzOP7EhZdKSE1mlihy6BGTTSpkm0xS49JfjRu_y2DFcH7dTw2lHTwKi0s7ivzQyXKbGp0UBl3OhKe1Z2ohefo0nKZXz5iCclAuVPbR0l4loONpTFeIM-msDurZ1ZSdAG0YJGUSU14NDW4U7Cz5jbyYDpx9GVPso"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Nitro Rush</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Action • Race</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for a horror film called 'Whispers in the Dark'. A minimalist, eerie composition showing a single wooden door slightly ajar in a pitch-black corridor. A cold blue light emanates from behind the door. The mood is suspenseful and mysterious, focusing on shadow and silhouette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD409KWgZkf8UdCwpE4o1c9l66qBkFB722EsFaTbxofKj7IqUlUsehOBE-2gwqQJNs6nzHS-cFASCJ-DFTJfeH28BmcLWQ_oKLhhxzcfAe1fAopG1lhIymGBGAyxltO8I8-LMKZkJR5kDL8FiucIYR0JbNQX1Es9rccNkeaXNu9j5k-JUDywTa5MlqB-O7C3GeJnw7KgORBJFD2Hy7J28Wu5UTIDXEoGkL-WQZVBAkdfy3vcSIo8YX52AwyGvCrkhf2d1g3MIZBrVo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Whispers in the Dark</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Horror • Mystery</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for a romantic comedy 'Spring in Paris'. Two people walking by the Seine river with the Eiffel Tower in the soft-focus background. The color palette is warm, featuring soft pinks, yellows, and greens. Elegant and inviting aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlkHx8iI1RSfz43b5LC5XgplPDiEAF-b2gDIzSnAc_Skkv4jXYET7smy1PziE-fFiyzsMz6vMpUPNUbWa5u-IDWaVs9_Mp0eV-mxmI8KkyGn7nBy5okd_4howJMu_nh-koYEtRqY7tX0MA2Lv4j0IlyCdGi4G8jy8VnQNpTSlNR3fDpdR2WXzS9OIC3_EyUWu0NxVZyJz_n2mbd0_jnyCeevj4541ATMySTJ6fce-EXwdwTHYHIVG1WHADKdotbM2dhE7CMtCas68"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Spring in Paris</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Comedy • Romance</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for an epic fantasy film 'Dragon Reign'. A massive golden dragon perched atop a snowy mountain peak, overlooking a valley. The lighting is cold with blue and white tones, contrasted by the dragon's fiery orange breath. Scale is emphasized through tiny human figures in the distance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmN3yKtqqtb67SCZN9BwwY-Y1cI8BQp2z9enFQdwaurJiApz2Et9HjsEADsHiVXFoutsyIXA44Z_BMcPD4FK5YtN7vqqbFoWCB_BANOVIAiEwKrQu9ozbO2bGsWo447szxWGW5ouzjKHvdiI-rhiJAKEv0HASlC8qPWlnMKw9uLJmZH7OOkDy9bNjC0fstdGa5fK1Smx1bBL9Q7GtkHrsrrG8mVvW7U7vhcn_cj8AYhefWgLXoQsRv5W8Z_7vP-AwEss7w4uZZ7lo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Dragon Reign</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Fantasy • Epic</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-xl aspect-[2/3] card-glow bg-surface-container transition-all">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vertical movie poster for a documentary 'Beyond Earth'. A high-resolution image of a nebula in deep space with vibrant swirling colors of teal, magenta, and gold. The composition is artistic and scientific, showing the beauty of the cosmos with crisp detail and deep blacks." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzP9cD6B7QkWEzcIAwAbF7PPxZ3El5kQNrbsGsnCs6oBFCf1bf4CxIZbtt-J4FNug_J9yBYpzCg5dp-7MhFeTrMNHE9lmuEeTS8-1G3g-4CaKPLMmG5PxfusMDHoWLgEPOjeH0z9AiZ7Q5cSllrvY7HF05X3neT_O2qHx87VDfOuyV_o0KDSrAjgPvnV19EIPwmZ4PcUTLA5N63ZFzWzRHortZz2cwkHeH-oYcmFCm3Dwtf7vpPEPXCa5NbVeQDkIBDeLC61HtS70"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex flex-col justify-end p-4">
+<h4 class="font-headline-sm text-headline-sm text-white truncate">Beyond Earth</h4>
+<p class="text-on-surface-variant font-label-md text-label-sm">Documentary • Space</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Premium Experience Banner (Bento Style) -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl max-w-[1920px] mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter h-auto md:h-[400px]">
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover" data-alt="A wide cinematic shot of a luxury cinema interior. Reclining leather seats with gold stitching, personal side tables with glowing lamps, and a massive curved screen in the distance. The lighting is warm and atmospheric, emphasizing the premium quality and comfort of the VIP experience." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7yBLPZc7uq6tZzH1HEM50Hs1kX_9gztMXHZzfz0OitNHaRgqi1qTeim8AK6zdRB6UugjwKmpeRRpGbpN9xMxALiC2ryLo_IuDjcOMnRhuLPamHk3bZHW0Zrsvvaoc9FsJdEMiodr0N-hwBpd7Vu-a38aQ8UQ8b6aIwV5fqvktbMvNi3lMU4Hp9rSmyC9niV5MzE3kIyuyVnSC2c2ETYfOATdDKheOmMtHrEUyaCMLxeE8IojRNVeGwIT_a5gI_G5MJ_EKhqRFHQY"/>
+<div class="absolute inset-0 bg-gradient-to-r from-black/80 to-transparent p-12 flex flex-col justify-center">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-4">THE CINEPREMIER VIP</h2>
+<p class="text-on-surface-variant font-body-lg text-body-lg max-w-md mb-8">Elevate your movie experience with our bespoke reclining lounges and gourmet catering.</p>
+<button class="w-fit bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg font-headline-sm hover:brightness-110 transition-all">Explore VIP Perks</button>
+</div>
+</div>
+<div class="bg-surface-container-high rounded-2xl p-8 flex flex-col justify-between border border-white/5 relative overflow-hidden">
+
+<div class="relative z-10">
+<span class="material-symbols-outlined text-secondary-fixed text-5xl mb-6">local_activity</span>
+<h3 class="font-headline-md text-headline-md text-white mb-4">MEMBER SPECIALS</h3>
+<p class="text-on-surface-variant font-body-md">Get 20% off on all snacks and early access to blockbusters.</p>
+</div>
+<a class="relative z-10 text-primary font-label-md flex items-center gap-2 group" href="#">
+                        Join Membership <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Theater Selector Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-xl bg-surface-container-lowest">
+<div class="max-w-[1920px] mx-auto text-center mb-12">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-2">FIND YOUR THEATER</h2>
+<p class="text-on-surface-variant font-body-lg">Select a location to see showtimes near you.</p>
+</div>
+<div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+<button class="flex items-center justify-between p-6 glass rounded-xl hover:bg-white/5 transition-all text-left">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white">The Grand Plaza</h4>
+<p class="text-on-surface-variant text-label-sm font-label-sm">8.4 miles away • IMAX available</p>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-6 glass rounded-xl hover:bg-white/5 transition-all text-left">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white">Westside Cinema</h4>
+<p class="text-on-surface-variant text-label-sm font-label-sm">2.1 miles away • Dolby Atmos</p>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-6 glass rounded-xl hover:bg-white/5 transition-all text-left">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-white">Harbor View VIP</h4>
+<p class="text-on-surface-variant text-label-sm font-label-sm">5.7 miles away • Luxury Lounge</p>
+</div>
+<span class="material-symbols-outlined text-primary">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-6 glass rounded-xl hover:bg-white/5 transition-all text-left border-primary/50">
+<div>
+<h4 class="font-headline-sm text-headline-sm text-primary">Browse All Locations</h4>
+<p class="text-on-surface-variant text-label-sm font-label-sm">View our full map of premium theaters</p>
+</div>
+<span class="material-symbols-outlined text-primary">map</span>
+</button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-lg w-full max-w-[1920px] mx-auto">
+<div class="mb-6 md:mb-0">
+<h2 class="font-headline-md text-headline-md text-primary-container">CINEPREMIER</h2>
+<p class="font-label-md text-label-md text-on-surface-variant mt-2 tracking-widest">LUXURY CINEMAS</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8 mb-6 md:mb-0">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Corporate Bookings</a>
+</div>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+</a>
+<a class="w-10 h-10 rounded-full glass flex items-center justify-center text-on-surface-variant hover:text-primary transition-all" href="#">
+<svg class="w-5 h-5 fill-current" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+</div>
+</div>
+<div class="w-full text-center py-4 bg-black/40">
+<p class="font-label-md text-label-sm text-on-surface-variant opacity-50 uppercase">© 2024 CINEPREMIER LUXURY CINEMAS. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+<!-- Micro-interactions Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header scroll effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-2', 'bg-surface/90');
+                    header.classList.remove('py-4', 'bg-surface/60');
+                } else {
+                    header.classList.add('py-4', 'bg-surface/60');
+                    header.classList.remove('py-2', 'bg-surface/90');
+                }
+            });
+
+            // Smooth appear for cards
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.group').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+                
+                const cardObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, { threshold: 0.1 });
+                cardObserver.observe(el);
+            });
+        });
+    </script>
+</body></html>

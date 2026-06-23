@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Checkout | CINEPREMIER LUXURY CINEMAS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glow-red:focus-within {
+            box-shadow: 0 0 15px rgba(229, 9, 20, 0.3);
+            border-color: #ffb4aa;
+        }
+        .cinema-gradient {
+            background: linear-gradient(180deg, rgba(19, 19, 19, 0) 0%, rgba(19, 19, 19, 0.9) 100%);
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-variant": "#353534",
+                    "tertiary-fixed": "#e2e0fc",
+                    "tertiary-fixed-dim": "#c6c4df",
+                    "outline-variant": "#5e3f3b",
+                    "tertiary-container": "#717088",
+                    "background": "#131313",
+                    "on-primary-fixed": "#410001",
+                    "on-primary-container": "#fff7f6",
+                    "error": "#ffb4ab",
+                    "secondary": "#fff9ef",
+                    "primary": "#ffb4aa",
+                    "on-background": "#e5e2e1",
+                    "surface-tint": "#ffb4aa",
+                    "tertiary": "#c6c4df",
+                    "surface-bright": "#393939",
+                    "inverse-surface": "#e5e2e1",
+                    "secondary-fixed": "#ffe16d",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-surface": "#e5e2e1",
+                    "on-tertiary": "#2f2e43",
+                    "primary-fixed": "#ffdad5",
+                    "on-tertiary-fixed-variant": "#45455b",
+                    "secondary-fixed-dim": "#e9c400",
+                    "surface-container-low": "#1c1b1b",
+                    "on-secondary-fixed": "#221b00",
+                    "inverse-primary": "#c0000c",
+                    "surface-container": "#201f1f",
+                    "primary-fixed-dim": "#ffb4aa",
+                    "on-primary": "#690003",
+                    "primary-container": "#e50914",
+                    "surface-container-high": "#2a2a2a",
+                    "on-error": "#690005",
+                    "error-container": "#93000a",
+                    "on-secondary": "#3a3000",
+                    "on-error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#930007",
+                    "surface-container-highest": "#353534",
+                    "secondary-container": "#ffdb3c",
+                    "outline": "#af8782",
+                    "on-tertiary-container": "#fbf7ff",
+                    "on-secondary-fixed-variant": "#544600",
+                    "on-surface-variant": "#e9bcb6",
+                    "surface": "#131313",
+                    "inverse-on-surface": "#313030",
+                    "on-tertiary-fixed": "#1a1a2e",
+                    "on-secondary-container": "#725f00",
+                    "surface-dim": "#131313"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "8px",
+                    "xl": "64px",
+                    "margin-mobile": "16px",
+                    "sm": "16px",
+                    "margin-desktop": "80px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "base": "4px",
+                    "gutter": "20px"
+            },
+            "fontFamily": {
+                    "label-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "headline-sm": ["Montserrat"],
+                    "display-lg": ["Montserrat"],
+                    "display-lg-mobile": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "700"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-body-md text-body-md antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl border-b border-white/10 shadow-2xl">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-xl">
+<span class="font-display-lg text-display-lg font-black tracking-tighter text-primary-container">CINEPREMIER</span>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Movies</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Theaters</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Offers</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">VIP</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-xs text-secondary-fixed cursor-pointer font-label-md text-label-md hover:bg-white/5 px-4 py-2 rounded-full transition-all">
+<span class="material-symbols-outlined text-[20px]">location_on</span>
+<span>New York, NY</span>
+</div>
+<div class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:bg-white/5 p-2 rounded-full transition-all" data-icon="account_circle">account_circle</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-32 pb-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
+<!-- Back Button Micro-interaction -->
+<a class="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all mb-lg group" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+<span class="font-label-md text-label-md">Return to Seat Selection</span>
+</a>
+<header class="mb-xl">
+<h1 class="font-display-lg text-display-lg mb-2">Finalize Your Booking</h1>
+<p class="text-on-surface-variant font-body-lg text-body-lg">Confirm your details and choose a payment method to secure your seats.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+<!-- Left Column: Summary and Booking Details -->
+<div class="lg:col-span-7 space-y-lg">
+<!-- Ticket Detail Bento Section -->
+<section class="glass-panel rounded-xl overflow-hidden p-6 relative group">
+<div class="flex flex-col md:flex-row gap-lg">
+<div class="relative w-full md:w-48 aspect-[2/3] rounded-lg overflow-hidden shrink-0 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-contrast movie poster for a dramatic blockbuster film. The poster features a solitary figure silhouetted against a vibrant, fiery sunset with deep red and orange hues. The aesthetic is prestigious and mysterious, with sharp edges and a slight grain effect to mimic professional film photography. The lighting is dramatic, casting long shadows across a desolate landscape, perfectly aligning with a luxury dark-mode UI design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6W5yrL7U9z7KcKeGnvpvCqBiEGx-oDN0ULFbyiyI9-m-nETYrJwykj3_ZJTFYJ2UM9bku1g-5QYjCTsko5oznadESQ4x2z6o79uQLonNbmn8PsadDycL8fQ-SearPUfPMttFWo0wMnAgm5Mg_PN4bllWsb0aVgteRwczJKiPzHE5OSZu47uy7yDs5uj6xbxosCXqfoyEIx0-hwpVerJ7j6L6Ui9Z3gWRLYDXjcLs3PsInXukKeAoSVQsUgNq_q9zQC1tefs-ElJ4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+</div>
+<div class="flex-1 space-y-md">
+<div>
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm mb-2 inline-block">PREMIER EXPERIENCE</span>
+<h2 class="font-headline-md text-headline-md">NOIR: THE LAST FRONTIER</h2>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">theater_comedy</span>
+<div>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Theater</p>
+<p class="font-label-md text-label-md">Grand Hall - Screen 4</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span>
+<div>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Date &amp; Time</p>
+<p class="font-label-md text-label-md">Dec 14 | 08:30 PM</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary-fixed">airline_seat_recline_extra</span>
+<div>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Seats</p>
+<p class="font-label-md text-label-md">J12, J13, J14 (VIP)</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary">distance</span>
+<div>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Location</p>
+<p class="font-label-md text-label-md">Lincoln Center, NY</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Payment Methods -->
+<section class="space-y-md">
+<h3 class="font-headline-sm text-headline-sm flex items-center gap-2">
+<span class="material-symbols-outlined">payments</span>
+                        Payment Options
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Credit Card -->
+<div class="glass-panel p-6 rounded-xl border-primary ring-2 ring-primary bg-primary/5 transition-all cursor-pointer group hover:bg-primary/10">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-primary text-3xl">credit_card</span>
+<div class="w-4 h-4 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+</div>
+<p class="font-headline-sm text-headline-sm mb-1">Card</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Visa, Mastercard, Amex</p>
+</div>
+<!-- Wallet -->
+<div class="glass-panel p-6 rounded-xl border-white/5 transition-all cursor-pointer group hover:bg-white/5">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-on-surface-variant text-3xl group-hover:text-primary transition-colors">account_balance_wallet</span>
+<div class="w-4 h-4 rounded-full border-2 border-white/20"></div>
+</div>
+<p class="font-headline-sm text-headline-sm mb-1">Digital</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Apple Pay, GPay</p>
+</div>
+<!-- Loyalty -->
+<div class="glass-panel p-6 rounded-xl border-white/5 transition-all cursor-pointer group hover:bg-white/5">
+<div class="flex justify-between items-start mb-md">
+<span class="material-symbols-outlined text-secondary-fixed text-3xl">stars</span>
+<div class="w-4 h-4 rounded-full border-2 border-white/20"></div>
+</div>
+<p class="font-headline-sm text-headline-sm mb-1">Points</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">Loyalty Points: 4,200</p>
+</div>
+</div>
+<!-- Input Form -->
+<div class="glass-panel p-8 rounded-xl space-y-md mt-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Cardholder Name</label>
+<div class="glow-red">
+<input class="w-full bg-background border border-white/10 rounded-lg p-3 text-on-surface focus:outline-none focus:ring-0" placeholder="Johnathan Doe" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Card Number</label>
+<div class="glow-red">
+<input class="w-full bg-background border border-white/10 rounded-lg p-3 text-on-surface focus:outline-none focus:ring-0" placeholder="•••• •••• •••• 4412" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">Expiry Date</label>
+<div class="glow-red">
+<input class="w-full bg-background border border-white/10 rounded-lg p-3 text-on-surface focus:outline-none focus:ring-0" placeholder="MM/YY" type="text"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface-variant ml-1">CVV</label>
+<div class="glow-red">
+<input class="w-full bg-background border border-white/10 rounded-lg p-3 text-on-surface focus:outline-none focus:ring-0" placeholder="•••" type="text"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Order Summary Sticky Sidebar -->
+<aside class="lg:col-span-5 sticky top-32">
+<div class="glass-panel rounded-xl overflow-hidden shadow-2xl">
+<div class="bg-surface-container-high px-8 py-6 border-b border-white/10">
+<h3 class="font-headline-md text-headline-md">Booking Summary</h3>
+</div>
+<div class="p-8 space-y-6">
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">VIP Tickets (3 × $35.00)</span>
+<span class="font-label-md text-label-md">$105.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">Luxury Amenities Fee</span>
+<span class="font-label-md text-label-md">$12.00</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant font-body-md text-body-md">Booking Tax (8.5%)</span>
+<span class="font-label-md text-label-md">$9.95</span>
+</div>
+</div>
+<div class="border-t border-white/10 pt-6">
+<div class="flex justify-between items-center mb-md">
+<span class="font-headline-sm text-headline-sm">Grand Total</span>
+<span class="font-display-lg text-headline-md text-primary">$126.95</span>
+</div>
+<div class="space-y-4">
+<button class="w-full bg-primary-container text-white py-4 rounded-lg font-headline-sm text-headline-sm flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(229,9,20,0.4)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+                                    SECURE PAYMENT
+                                </button>
+<p class="text-center text-on-surface-variant font-label-sm text-label-sm px-4">
+                                    By clicking complete, you agree to our <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Cancellation Policy</a>.
+                                </p>
+</div>
+</div>
+<!-- Loyalty Points Insight -->
+<div class="bg-secondary-container/10 border border-secondary-container/20 p-4 rounded-lg flex items-center gap-4">
+<div class="bg-secondary-container text-on-secondary-container p-2 rounded-full">
+<span class="material-symbols-outlined text-[20px]">workspace_premium</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-secondary-fixed">Member Reward</p>
+<p class="text-on-surface-variant font-label-sm text-label-sm">You'll earn 127 points for this booking.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Badges -->
+<div class="mt-lg flex justify-center items-center gap-xl grayscale opacity-50">
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">security</span>
+                        PCI DSS COMPLIANT
+                    </div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm">verified</span>
+                        ENCRYPTED SESSION
+                    </div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg w-full max-w-[1920px] mx-auto gap-lg">
+<div class="flex flex-col gap-xs items-center md:items-start">
+<span class="font-headline-md text-headline-md text-primary-container">CINEPREMIER LUXURY CINEMAS</span>
+<span class="font-label-md text-label-md text-on-surface-variant">© 2024 CINEPREMIER LUXURY CINEMAS. ALL RIGHTS RESERVED.</span>
+</div>
+<div class="flex flex-wrap gap-md justify-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Terms of Service</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Contact Us</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary-fixed-dim transition-colors" href="#">Corporate Bookings</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interactions for payment selection
+        document.querySelectorAll('.glass-panel.cursor-pointer').forEach(panel => {
+            panel.addEventListener('click', () => {
+                // Clear all active states
+                document.querySelectorAll('.glass-panel.cursor-pointer').forEach(p => {
+                    p.classList.remove('border-primary', 'ring-2', 'ring-primary', 'bg-primary/5');
+                    p.classList.add('border-white/5');
+                    const radio = p.querySelector('.rounded-full.border-2');
+                    if (radio) {
+                        radio.classList.remove('border-primary');
+                        radio.classList.add('border-white/20');
+                        radio.innerHTML = '';
+                    }
+                    const icon = p.querySelector('.material-symbols-outlined');
+                    if (icon && !icon.classList.contains('text-secondary-fixed')) {
+                        icon.classList.remove('text-primary');
+                        icon.classList.add('text-on-surface-variant');
+                    }
+                });
+
+                // Set active state
+                panel.classList.remove('border-white/5');
+                panel.classList.add('border-primary', 'ring-2', 'ring-primary', 'bg-primary/5');
+                const radio = panel.querySelector('.rounded-full.border-2');
+                if (radio) {
+                    radio.classList.remove('border-white/20');
+                    radio.classList.add('border-primary');
+                    radio.innerHTML = '<div class="w-2 h-2 rounded-full bg-primary"></div>';
+                }
+                const icon = panel.querySelector('.material-symbols-outlined');
+                if (icon) {
+                    icon.classList.remove('text-on-surface-variant');
+                    icon.classList.add('text-primary');
+                }
+            });
+        });
+
+        // Button Ripple Effect simulation
+        const payBtn = document.querySelector('button');
+        payBtn.addEventListener('click', function(e) {
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+            let ripple = document.createElement('span');
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            this.appendChild(ripple);
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    </script>
+</body></html>
