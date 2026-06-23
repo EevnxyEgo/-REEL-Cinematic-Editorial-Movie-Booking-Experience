@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   REEL — design tokens
+   Two themes, one world: cream paper ↔ "midnight screening". Burgundy is the
+   single accent in both. Everything below is a token; screens never hardcode
+   palette, type, or texture.
+   ========================================================================== */
+
+:root {
+  --paper: #f4ede2;
+  --paper-2: #eaddc9;
+  --paper-3: #e0d1b8;
+  --ink: #1f1b18;
+  --ink-soft: #6b6055;
+  --burgundy: #6e1a23;
+  --burgundy-2: #501119;
+  --sepia: #ad9573;
+  --hair: rgba(31, 27, 24, 0.16);
+  --hair-strong: rgba(31, 27, 24, 0.34);
+  --grain-opacity: 0.05;
+  --paper-grain-opacity: 0.5;
+  --ease-curtain: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #14110e;
+  --paper-2: #1d1813;
+  --paper-3: #271f18;
+  --ink: #f2e8d6;
+  --ink-soft: #9d917c;
+  --burgundy: #b23a40;
+  --burgundy-2: #7e2127;
+  --sepia: #6f6353;
+  --hair: rgba(242, 232, 214, 0.15);
+  --hair-strong: rgba(242, 232, 214, 0.3);
+  --grain-opacity: 0.07;
+  --paper-grain-opacity: 0.28;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-paper-3: var(--paper-3);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-burgundy: var(--burgundy);
+  --color-burgundy-2: var(--burgundy-2);
+  --color-sepia: var(--sepia);
+
+  --font-display: var(--font-fraunces), "Hoefler Text", Georgia, serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, "SFMono-Regular", monospace;
+}
+
+/* ============================================================================
+   Base
+   ========================================================================== */
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+    transition:
+      background-color 0.6s var(--ease-out-expo),
+      color 0.6s var(--ease-out-expo);
+    overflow-x: hidden;
+  }
+
+  /* Paper grain woven into the background of the whole document. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: var(--paper-grain-opacity);
+    mix-blend-mode: multiply;
+  }
+  [data-theme="dark"] body::before {
+    mix-blend-mode: screen;
+  }
+
+  ::selection {
+    background: var(--burgundy);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--hair-strong);
+    border: 3px solid var(--paper);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 0.95;
+  }
+}
+
+/* ============================================================================
+   Editorial type + print primitives
+   ========================================================================== */
+
+@layer components {
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  .display-hero {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 0.86;
+    letter-spacing: -0.025em;
+    font-size: clamp(3.5rem, 1.2rem + 11vw, 11rem);
+    font-optical-sizing: auto;
+  }
+
+  .display-xl {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    font-size: clamp(2.25rem, 1rem + 5vw, 5.5rem);
+  }
+
+  .pull-quote {
+    font-family: var(--font-display);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.18;
+    font-size: clamp(1.35rem, 1rem + 1.6vw, 2.25rem);
+    letter-spacing: -0.01em;
+  }
+
+  /* Hairline rule, like a print magazine column divider. */
+  .rule {
+    border: 0;
+    border-top: 1px solid var(--hair-strong);
+  }
+
+  /* Animated hairline underline for links/labels. */
+  .underline-sweep {
+    position: relative;
+  }
+  .underline-sweep::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.12em;
+    height: 1px;
+    width: 100%;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s var(--ease-out-expo);
+  }
+  .underline-sweep:hover::after,
+  .underline-sweep:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* Outlined display text — engraved magazine masthead feel. */
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--ink);
+  }
+}
+
+/* ============================================================================
+   Texture utilities
+   ========================================================================== */
+
+@layer utilities {
+  .film-grain {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+  }
+
+  /* Burgundy duotone for real poster/backdrop imagery. */
+  .duotone img {
+    filter: grayscale(1) contrast(1.18) brightness(0.92);
+  }
+  .duotone::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--burgundy) 78%, transparent),
+      color-mix(in srgb, var(--burgundy-2) 90%, transparent)
+    );
+    mix-blend-mode: color;
+  }
+  .duotone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, transparent 40%, var(--paper-3) 160%);
+    mix-blend-mode: multiply;
+    opacity: 0.45;
+  }
+
+  /* Halftone dot field for poster shadows. */
+  .halftone {
+    background-image: radial-gradient(var(--hair-strong) 1px, transparent 1.4px);
+    background-size: 7px 7px;
+  }
+
+  .grain-overlay {
+    opacity: var(--grain-opacity);
+  }
+
+  /* Consistent editorial gutters across every screen. */
+  .gutter {
+    padding-inline: clamp(1.25rem, 5vw, 6rem);
+  }
+}
+
+/* Lenis smooth scroll (recommended baseline styles). */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* ============================================================================
+   Motion safety
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+  .grain-flicker {
+    animation: none !important;
+  }
+}
+
+@keyframes grain-shift {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-4%, 3%); }
+  40% { transform: translate(3%, -2%); }
+  60% { transform: translate(-2%, 4%); }
+  80% { transform: translate(4%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+.grain-flicker {
+  animation: grain-shift 0.6s steps(3) infinite;
+}
+
+/* Editorial title marquee. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none !important;
+  }
+}
+
+/* Print — isolate the e-ticket on clean paper. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body::before {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .print-ticket {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}
