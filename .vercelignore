@@ -1,0 +1,10 @@
+# Never upload local environment files to Vercel.
+# Secrets live ONLY in Vercel's encrypted env store
+# (Project Settings → Environment Variables), never in the deployment artifact.
+.env
+.env.*
+
+# Local-only scratch / tooling that has no business on the build machine.
+.playwright-mcp/
+.claude/
+_stitch_designs/
