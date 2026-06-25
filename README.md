@@ -2,6 +2,12 @@
 
 > _A 1970s film-festival programme, rebuilt for the web._
 
+### ▶ [**Live demo — cinebook-advanced.vercel.app**](https://cinebook-advanced.vercel.app)
+
+Deployed on **Vercel**. The live build runs the curated offline programme; add a
+`TMDB_API_KEY` to light up real _Now Playing_ data (see
+[Data](#data--tmdb-with-a-graceful-fallback)).
+
 REEL is a portfolio-grade movie booking experience designed like a Criterion
 booklet crossed with a high-fashion editorial spread. Pick a film, read the
 notes, choose a showtime, claim your seats on a print-blueprint floor plan, and
@@ -146,6 +152,13 @@ npm run start      # serve the production build
 npm run lint       # ESLint
 npm run format     # Prettier
 ```
+
+### Deployment
+
+REEL is deployed to **Vercel** at
+[cinebook-advanced.vercel.app](https://cinebook-advanced.vercel.app). Any push
+to the linked project redeploys it; `TMDB_API_KEY` is configured as an optional
+environment variable in the Vercel dashboard.
 
 ---
 
