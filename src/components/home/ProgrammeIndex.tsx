@@ -63,6 +63,7 @@ export function ProgrammeIndex({
               </span>
               <span className="col-span-2 mt-1 font-mono text-[0.68rem] uppercase leading-relaxed tracking-[0.15em] text-ink-soft md:col-span-1 md:mt-0 md:text-right">
                 {film.year} · {formatRuntime(film.runtime)}
+                {film.originalLanguage ? ` · ${film.originalLanguage}` : ""}
                 <br className="hidden md:block" />
                 <span className="md:hidden"> · </span>
                 {film.genres.slice(0, 2).join(" / ")}

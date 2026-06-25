@@ -2,6 +2,12 @@
 
 export type FilmSource = "tmdb" | "archive";
 
+export interface CastMember {
+  name: string;
+  /** Role in the film, or null when unknown. */
+  character: string | null;
+}
+
 export interface Film {
   /** Slug for curated films, numeric TMDB id (as string) for live films. */
   id: string;
@@ -20,6 +26,10 @@ export interface Film {
   backdropPath: string | null;
   /** YouTube key or null → trailer renders an archive-mode placeholder. */
   trailerKey: string | null;
+  /** Readable original language (e.g. "Japanese"), or null when unknown. */
+  originalLanguage: string | null;
+  /** Top-billed cast. Empty on list rows (only resolved on the detail view). */
+  cast: CastMember[];
 }
 
 export interface Showtime {

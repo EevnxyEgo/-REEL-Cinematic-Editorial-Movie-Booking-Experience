@@ -59,6 +59,7 @@ export function FeaturedHero({ film, source }: { film: Film; source: FilmSource 
           {film.genres.slice(0, 2).map((g) => (
             <Tag key={g}>{g}</Tag>
           ))}
+          {film.originalLanguage && <Tag>{film.originalLanguage}</Tag>}
           {film.director && <Tag>Dir. {film.director}</Tag>}
         </div>
 

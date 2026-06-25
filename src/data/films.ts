@@ -22,6 +22,13 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "English",
+    cast: [
+      { name: "Harrison Ford", character: "Rick Deckard" },
+      { name: "Rutger Hauer", character: "Roy Batty" },
+      { name: "Sean Young", character: "Rachael" },
+      { name: "Edward James Olmos", character: "Gaff" },
+    ],
   },
   {
     id: "2001-a-space-odyssey",
@@ -37,6 +44,13 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "English",
+    cast: [
+      { name: "Keir Dullea", character: "Dr. Dave Bowman" },
+      { name: "Gary Lockwood", character: "Dr. Frank Poole" },
+      { name: "William Sylvester", character: "Dr. Heywood Floyd" },
+      { name: "Douglas Rain", character: "HAL 9000 (voice)" },
+    ],
   },
   {
     id: "in-the-mood-for-love",
@@ -52,6 +66,11 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "Cantonese",
+    cast: [
+      { name: "Tony Leung Chiu-wai", character: "Chow Mo-wan" },
+      { name: "Maggie Cheung", character: "Su Li-zhen" },
+    ],
   },
   {
     id: "apocalypse-now",
@@ -67,6 +86,13 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "English",
+    cast: [
+      { name: "Martin Sheen", character: "Capt. Willard" },
+      { name: "Marlon Brando", character: "Col. Kurtz" },
+      { name: "Robert Duvall", character: "Lt. Col. Kilgore" },
+      { name: "Dennis Hopper", character: "Photojournalist" },
+    ],
   },
   {
     id: "taxi-driver",
@@ -82,6 +108,13 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "English",
+    cast: [
+      { name: "Robert De Niro", character: "Travis Bickle" },
+      { name: "Jodie Foster", character: "Iris" },
+      { name: "Cybill Shepherd", character: "Betsy" },
+      { name: "Harvey Keitel", character: "Sport" },
+    ],
   },
   {
     id: "stalker",
@@ -97,6 +130,12 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "Russian",
+    cast: [
+      { name: "Alexander Kaidanovsky", character: "Stalker" },
+      { name: "Anatoly Solonitsyn", character: "Writer" },
+      { name: "Nikolai Grinko", character: "Professor" },
+    ],
   },
   {
     id: "persona",
@@ -112,6 +151,12 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "Swedish",
+    cast: [
+      { name: "Bibi Andersson", character: "Nurse Alma" },
+      { name: "Liv Ullmann", character: "Elisabet Vogler" },
+      { name: "Margaretha Krook", character: "The Doctor" },
+    ],
   },
   {
     id: "the-conformist",
@@ -127,6 +172,12 @@ export const CURATED_FILMS: Film[] = [
     posterPath: null,
     backdropPath: null,
     trailerKey: null,
+    originalLanguage: "Italian",
+    cast: [
+      { name: "Jean-Louis Trintignant", character: "Marcello Clerici" },
+      { name: "Stefania Sandrelli", character: "Giulia" },
+      { name: "Dominique Sanda", character: "Anna Quadri" },
+    ],
   },
 ];
 

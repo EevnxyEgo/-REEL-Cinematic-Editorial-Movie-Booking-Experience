@@ -83,8 +83,32 @@ export function DetailView({ film, source }: { film: Film; source: FilmSource })
             <MetaRow label="Year" value={String(film.year)} />
             <MetaRow label="Running Time" value={formatRuntime(film.runtime)} />
             {film.director && <MetaRow label="Director" value={film.director} />}
+            {film.originalLanguage && (
+              <MetaRow label="Language" value={film.originalLanguage} />
+            )}
             <MetaRow label="Genre" value={film.genres.join(" · ") || "Feature"} />
           </dl>
+
+          {film.cast.length > 0 && (
+            <Reveal className="mt-14 max-w-xl">
+              <div className="flex items-center gap-4">
+                <span className="kicker">Featuring</span>
+                <span className="h-[1px] flex-1 bg-ink/15" />
+              </div>
+              <ul className="mt-6 grid grid-cols-1 gap-x-10 gap-y-5 sm:grid-cols-2">
+                {film.cast.map((member) => (
+                  <li key={member.name} className="border-b border-ink/15 pb-3">
+                    <p className="font-display text-lg leading-tight">{member.name}</p>
+                    {member.character && (
+                      <p className="meta mt-1 uppercase tracking-[0.16em] text-ink-soft">
+                        {member.character}
+                      </p>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          )}
 
           <div className="mt-12 flex flex-wrap items-center gap-6">
             <Magnetic strength={0.4}>
