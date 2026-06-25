@@ -35,8 +35,8 @@ export function CustomCursor() {
 
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
-  const sx = useSpring(x, { stiffness: 700, damping: 40, mass: 0.4 });
-  const sy = useSpring(y, { stiffness: 700, damping: 40, mass: 0.4 });
+  const sx = useSpring(x, { stiffness: 1000, damping: 32, mass: 0.22 });
+  const sy = useSpring(y, { stiffness: 1000, damping: 32, mass: 0.22 });
 
   useEffect(() => {
     if (!enabled) return;
@@ -69,12 +69,12 @@ export function CustomCursor() {
       <motion.div
         className="flex items-center justify-center rounded-full border border-burgundy text-burgundy"
         animate={{
-          width: active ? 76 : 16,
-          height: active ? 76 : 16,
+          width: active ? 56 : 12,
+          height: active ? 56 : 12,
           backgroundColor: active ? "var(--burgundy)" : "rgba(0,0,0,0)",
         }}
-        transition={{ type: "spring", stiffness: 320, damping: 26 }}
-        style={{ marginLeft: active ? -38 : -8, marginTop: active ? -38 : -8 }}
+        transition={{ type: "spring", stiffness: 360, damping: 28 }}
+        style={{ marginLeft: active ? -28 : -6, marginTop: active ? -28 : -6 }}
       >
         {active && label && (
           <span className="text-[0.5rem] font-mono uppercase tracking-[0.2em] text-paper">

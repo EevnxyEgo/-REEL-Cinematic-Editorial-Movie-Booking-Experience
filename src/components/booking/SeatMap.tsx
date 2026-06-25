@@ -116,7 +116,7 @@ export function SeatMap({
                       whileTap={isTaken ? undefined : { scale: 0.84 }}
                       className={`relative h-6 w-6 border transition-colors sm:h-7 sm:w-7 ${
                         isTaken
-                          ? "cursor-not-allowed border-transparent"
+                          ? "cursor-not-allowed border-sepia/60 bg-sepia/15"
                           : isSelected
                             ? "border-burgundy"
                             : "border-ink/35 hover:border-burgundy hover:bg-burgundy/10"
@@ -127,8 +127,8 @@ export function SeatMap({
                           className="absolute inset-0"
                           style={{
                             backgroundImage:
-                              "repeating-linear-gradient(45deg, var(--sepia) 0, var(--sepia) 1.5px, transparent 1.5px, transparent 5px)",
-                            opacity: 0.6,
+                              "repeating-linear-gradient(45deg, var(--sepia) 0, var(--sepia) 2px, transparent 2px, transparent 4.5px)",
+                            opacity: 0.9,
                           }}
                         />
                       )}
@@ -157,10 +157,10 @@ export function SeatMap({
         <Legend className="border border-ink/35" label="Available" />
         <Legend className="border border-burgundy bg-burgundy" label="Selected" />
         <Legend
-          className="border border-transparent"
+          className="border border-sepia/60 bg-sepia/15"
           style={{
             backgroundImage:
-              "repeating-linear-gradient(45deg, var(--sepia) 0, var(--sepia) 1.5px, transparent 1.5px, transparent 5px)",
+              "repeating-linear-gradient(45deg, var(--sepia) 0, var(--sepia) 2px, transparent 2px, transparent 4.5px)",
           }}
           label="Taken"
         />

@@ -32,7 +32,7 @@ export function Poster({
 
   return (
     <div
-      className={`duotone relative aspect-[2/3] overflow-hidden border border-ink/20 ${className}`}
+      className={`relative aspect-[2/3] overflow-hidden border border-ink/20 ${className}`}
     >
       <Image
         src={url}
@@ -43,7 +43,7 @@ export function Poster({
         className="object-cover"
         onError={() => setFailed(true)}
       />
-      <div className="film-grain pointer-events-none absolute inset-0 z-[2] opacity-[0.07] mix-blend-overlay" />
+      <div className="film-grain pointer-events-none absolute inset-0 z-[2] opacity-[0.04] mix-blend-overlay" />
     </div>
   );
 }

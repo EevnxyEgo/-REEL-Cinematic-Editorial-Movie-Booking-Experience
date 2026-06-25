@@ -59,7 +59,7 @@ export function ETicket({
         initial={{ opacity: 0, y: 40, rotate: -1 }}
         animate={{ opacity: 1, y: 0, rotate: 0 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="print-ticket relative grid w-full max-w-3xl grid-cols-1 overflow-hidden border shadow-[16px_16px_0_0_var(--burgundy)] sm:grid-cols-[1.7fr_1fr]"
+        className="print-ticket relative grid w-full max-w-3xl grid-cols-1 overflow-hidden border shadow-[16px_16px_0_0_var(--burgundy)] sm:grid-cols-[1.7fr_auto_1fr]"
         style={{ background: TICKET_BG, color: TICKET_INK, borderColor: "rgba(31,27,24,0.4)" }}
       >
         {/* Stub — details */}
