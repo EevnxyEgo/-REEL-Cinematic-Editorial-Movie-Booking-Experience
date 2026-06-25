@@ -156,9 +156,16 @@ npm run format     # Prettier
 ### Deployment
 
 REEL is deployed to **Vercel** at
-[cinebook-advanced.vercel.app](https://cinebook-advanced.vercel.app). Any push
-to the linked project redeploys it; `TMDB_API_KEY` is configured as an optional
-environment variable in the Vercel dashboard.
+[cinebook-advanced.vercel.app](https://cinebook-advanced.vercel.app). The project
+is linked via the Vercel CLI, so a new production release ships with:
+
+```bash
+vercel deploy --prod
+```
+
+Connect the GitHub repository in the Vercel dashboard to enable automatic
+deploys on every push. `TMDB_API_KEY` is an optional environment variable that
+can be set there to enable live _Now Playing_ data.
 
 ---
 
